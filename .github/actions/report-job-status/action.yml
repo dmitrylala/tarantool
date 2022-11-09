@@ -28,6 +28,10 @@ runs:
         fi
       shell: bash
 
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
     - name: Send VK Teams message on failure
       uses: tarantool/actions/report-job-status@master
       with:
