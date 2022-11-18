@@ -64,11 +64,7 @@ target_link_libraries(mp_datetime_fuzzer PUBLIC core fuzzer_config)
 # External dependencies
 include(ProtobufMutator)
 
-if(ENABLE_ASAN)
-    add_subdirectory(lua_fuzzer)
-else()
-    message(WARNING "LPM-based fuzzers are disabled without ASAN")
-endif()
+add_subdirectory(lua_fuzzer)
 
 set(fuzzing_binaries csv_fuzzer
                      datetime_parse_full_fuzzer
