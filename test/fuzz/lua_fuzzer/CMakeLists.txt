@@ -18,10 +18,16 @@ target_link_libraries(lua_grammar-proto
 
 target_include_directories(lua_fuzzer PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
 
+message(STATUS "Started linking")
+message(STATUS "${Protobuf_INCLUDE_DIRS}")
+message(STATUS "${Protobuf_LIBRARIES}")
+message(STATUS "${Protobuf_PROTOC_EXECUTABLE}")
+message(STATUS "${LPM_LIBRARIES}")
+
 target_link_libraries(lua_fuzzer
                       PUBLIC
-                      lua_grammar-proto
                       ${LPM_LIBRARIES}
+                      lua_grammar-proto
                       ${LUAJIT_LIBRARIES}
                       fuzzer_config)
 

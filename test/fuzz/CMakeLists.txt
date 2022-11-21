@@ -66,15 +66,17 @@ include(ProtobufMutator)
 
 add_subdirectory(lua_fuzzer)
 
-set(fuzzing_binaries csv_fuzzer
-                     datetime_parse_full_fuzzer
-                     datetime_strptime_fuzzer
-                     http_parser_fuzzer
+set(fuzzing_binaries 
+                    # csv_fuzzer
+                    #  datetime_parse_full_fuzzer
+                    #  datetime_strptime_fuzzer
+                    #  http_parser_fuzzer
                      lua_fuzzer
-                     mp_datetime_fuzzer
-                     swim_proto_member_fuzzer
-                     swim_proto_meta_fuzzer
-                     uri_fuzzer)
+                    #  mp_datetime_fuzzer
+                    #  swim_proto_member_fuzzer
+                    #  swim_proto_meta_fuzzer
+                    #  uri_fuzzer
+                    )
 
 add_custom_target(fuzzers
                   DEPENDS ${fuzzing_binaries}
